@@ -1,7 +1,7 @@
-const Celebrity = requred ('../models/celebrity.js');
+const Celebrity = require('../models/celebrity.js');
 
 module.exports.list = (req, res, next) => {
-  Celebrity.find ()
-    .then (celebrities) => res.render ('celebrities/list', {celebrities})
-
-}
+  Celebrity.find()
+    .then ((celebrities) => res.render ('celebrities/index', {celebrities}))
+    .catch(err => next(err))
+};

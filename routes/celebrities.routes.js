@@ -4,7 +4,7 @@ const router = express.Router();
 
 const celebritiesController = require('../controllers/celebrities.controller');
 
-router.get('/celebrities', celebritiesController.list);
+router.get('/', celebritiesController.list);
 
 
 // router.get('/create', usersController.create)
