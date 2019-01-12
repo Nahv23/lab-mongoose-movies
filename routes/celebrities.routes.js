@@ -6,8 +6,7 @@ const celebritiesController = require('../controllers/celebrities.controller');
 
 router.get('/', celebritiesController.list);
 
-
-// router.get('/create', usersController.create)
+router.get('/create', celebritiesController.create)
 
 // router.post('/create', usersController.doCreate)
 
