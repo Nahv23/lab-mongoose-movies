@@ -22,3 +22,8 @@ module.exports.doCreate = (req, res, next) => {
   celebrity.save()
     .then((celebrity) => { res.redirect('/celebrities/list' )});
 }
+
+module.exports.get = (req, res, next) => {
+  Celebrity.findById(req.params.id)
+    .then(celebrity => res.render('celebrities/detail', { celebrity }));
+}
