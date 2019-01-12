@@ -1,0 +1,24 @@
+<a class="btn btn-primary mb-3" href="/celebrities/">New Celebrity</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Occupation</th>
+      <th>Phrase</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each celebrities as |celebrity| }}
+      <tr>
+        {{!-- <td>
+          <a href="/books/{{b._id}}/edit">{{ book.isbn }}</a>
+        </td> --}}
+        <td>{{ celebrity.name }}</td>
+        <td>{{ celebrity.occupation }}</td>
+        <td>{{ celebrity.catchPhrase }}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
