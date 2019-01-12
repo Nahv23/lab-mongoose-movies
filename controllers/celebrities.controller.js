@@ -30,5 +30,23 @@ module.exports.get = (req, res, next) => {
 
 module.exports.delete = (req, res, next) => {
   Celebrity.findByIdAndDelete(req.params.id)
-    .then(Celebrity => res.redirect('/celebrities/list'));
+    .then(celebrity => res.redirect('/celebrities/list'));
 }
+
+
+module.exports.edit = (req, res, next) => {
+  Celebrity.findById(req.params.id)
+    .then((celebrity) => {
+      res.render('celebrities/index', { celebrity })
+    })
+  }
+
+  module.exports.doEdit = (req, res, next) => {
+    Celebrity.findById(req.params.id)
+      .then((celebrity) => {
+        celebrity.set(req.body);
+  
+        celebrity.save()
+          .then((celebrity) => { res.redirect('/celebrities/list' )});
+      })
+  }

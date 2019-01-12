@@ -2,8 +2,12 @@
 <h2>{{celebrity.name}}</h2>
 {{/each}} --}}
 
+{{#if celebrity.isNew }}
+  <form action="/celebrities/create" method="post">
+{{else}}
+  <form action="/celebrities/{{celebrity.id}}/edit" method="post">
+{{/if}}
 
-<form action="/celebrities/create" method="post">
 
   <div class="form-group">
     <label for="name">name</label>

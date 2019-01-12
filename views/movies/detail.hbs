@@ -1,0 +1,14 @@
+<h1>title: {{ movies.title }}</h1>
+<h1>genre: {{ movies.genre }}</h1>
+<h1>Plot: {{ movies.plot }}</h1>
+
+<a href="/movies/list">Back to list</a>
+
+<form action="/movies/{{movies._id}}/delete" method="post">
+  <button type="submit">Delete</button>
+</form>
+<br>
+{{!-- <form action="/movies/{{movies._id}}/edit" method="post">
+  <button type="submit">Edit</button>
+</form> --}}
+<a href="/movies/{{movies._id}}/edit">Edit</a>

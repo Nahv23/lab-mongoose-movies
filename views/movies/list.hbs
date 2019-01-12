@@ -1,0 +1,24 @@
+<a class="btn btn-primary mb-3" href="/movies/">New movie</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Occupation</th>
+      <th>Phrase</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each movies as |movie| }}
+      <tr>
+        {{!-- <td>
+          <a href="/books/{{b._id}}/edit">{{ book.isbn }}</a>
+        </td> --}}
+        <td> <a href="/movies/{{movie._id}}">{{ movie.title }}</a></td>
+        <td>{{ movie.genre }}</td>
+        <td>{{ movie.plot }}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
