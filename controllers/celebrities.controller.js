@@ -27,3 +27,8 @@ module.exports.get = (req, res, next) => {
   Celebrity.findById(req.params.id)
     .then(celebrity => res.render('celebrities/detail', { celebrity }));
 }
+
+module.exports.delete = (req, res, next) => {
+  Celebrity.findByIdAndDelete(req.params.id)
+    .then(Celebrity => res.redirect('/celebrities/list'));
+}
